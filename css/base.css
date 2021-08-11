@@ -1,4 +1,47 @@
 .h {width: 100%;}
 .v {height: 100%;}
 
-#__head__ {width: 100%; height: max-content;}
+body {
+    background-color: #225;
+}
+
+* {padding: 0%; margin: 0px; color: white;}
+
+#__head__ {
+    width: 100%; 
+    height: max-content;
+    display: flex;
+
+}
+#__app__ {width: 100%; height: 100%;}
+
+
+.bt_up {
+    border-bottom: solid; 
+    border-bottom-width: 3px;
+    transition: 0.4s;
+    width: 33.3333333%;
+    height: 50px;
+    display: flex;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    background-color: #223;
+    font-weight: 1000;
+    font-size: large;
+    
+    
+}
+
+.bt_up_b0 {border-bottom-color: crimson}
+.bt_up_b1 {border-bottom-color: dodgerblue}
+.bt_up_b2 {border-bottom-color: gold}
+
+@media (orientation: landscape) {
+    .landscape, .ld {display: block;}
+    .portrait, .pt {display: none;}
+}
+@media (orientation: portrait) {
+    .landscape, .ld {display: none;}
+    .portrait, .pt {display: block;}
+}

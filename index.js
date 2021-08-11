@@ -41,16 +41,23 @@ let pagina = gen_render({
     template:"./public/template/template.html"
 });
 
-app.get("/", (req, res, next) => {
+function run() {
+    app.get("/", (req, res) => {
 
-
-    res.send(
-        pagina.render(
-            open("./public/pages/index.html").read()
+        res.send(
+            pagina.render(
+                open("./public/pages/index.html").read()
+            )
         )
-    )
+    });
     
-});
+}; 
+
+run()
+
+app.use("/css", express.static("./css"));
+app.use("/js", express.static("./js"));
+app.use("/img", express.static("./img"));
 
 app.listen(4000, () => {
     console.log("Server open in the port " + 4000)
