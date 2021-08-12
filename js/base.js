@@ -1,5 +1,17 @@
+let N=`
+`;
+var go = e=>document.getElementById(e);
 (() => {
-    let go = e=>document.getElementById(e)
+    function trim(p="") {
+        let ca = [N, " "];
+        while (ca.includes(p[0])) {
+            p = p.slice(1)
+        };
+        while (ca.includes(p[p.length-1])) {
+            p = p.slice(0, p.length-2)
+        };
+        return p
+    };
     let mets = {
         "fill":(e=new HTMLDivElement()) => {
             let base = e.getAttribute("base");
@@ -12,10 +24,38 @@
             else if (["v", "V", "1"].includes(metodo))
             e.style.height = (go(base).offsetHeight-go(obj).offsetHeight) +"px";
             
-            console.log("llego")
+            //console.log("llego")
+        },
+        "lener":(e=new HTMLDivElement()) => {
+            let texto = e.getAttribute("text")||"!";
+            let fin = e.getAttribute("onfinish")||"";
+            let delay = parseInt(e.getAttribute("delay")||"100");
+            let iter = 0;            
+            
+            console.log("llego");
+
+            texto = trim(texto)
+
+            let meno = setInterval(() => {
+                
+                if (iter!==texto.length) {
+                    e.innerText = texto.slice(0, iter) + (texto[iter]|| "")
+                } else {
+                    
+                    clearInterval(meno)
+                    eval(fin)
+                }
+                iter++;
+                
+                //console.log(`"${texto[iter]}"`);
+                
+            }, delay)
         }
     };
-    function draw() {
+    let justo = true;
+    let justo_list = ["lener"];
+    function draw(just) {
+        //just = just||false;
         let divs = document.getElementsByTagName("div");
 
         //console.log("llego")
@@ -26,10 +66,12 @@
 
             if (mode) {
                 
-                (mets[mode]||(()=>{}))(e)
+                if (justo | !justo_list.includes(mode)) (mets[mode]||(()=>{}))(e)
             }
             
         };
+
+        justo = false
 
 
     };

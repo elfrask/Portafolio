@@ -7,13 +7,30 @@ body {
 
 * {padding: 0%; margin: 0px; color: white;}
 
+.logo {
+    
+    font-weight: 1000;
+    font-size: 20px;
+    color: dodgerblue;
+    position: absolute;
+    left: 5%;
+    background-color: #335;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
 #__head__ {
     width: 100%; 
     height: max-content;
     display: flex;
-
+    background-color: #112;
+    align-items: center;
 }
 #__app__ {width: 100%; height: 100%;}
+
 
 
 .bt_up {
@@ -29,19 +46,135 @@ body {
     background-color: #223;
     font-weight: 1000;
     font-size: large;
-    
-    
+    cursor: pointer;
 }
+.bt_up:hover {
+    background: #224;
+}
+
+
 
 .bt_up_b0 {border-bottom-color: crimson}
 .bt_up_b1 {border-bottom-color: dodgerblue}
 .bt_up_b2 {border-bottom-color: gold}
 
+.note {
+    padding: 5%;
+    width: 90%-5px;
+    background-color: rgb(149, 207, 255);
+    border-left: solid;
+    border-left-width: 5px;
+    border-left-color: dodgerblue;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    color: rgb(56, 56, 56);
+    font-weight: 700;
+    font-size: 16px;
+    text-align: justify;
+
+}
+
+.img {background-size: cover;background-repeat: no-repeat;}
+.sq-50 {width: 50px; height: 50px;}
+.sq-100 {width: 100px; height: 100px;}
+.sq-200 {width: 200px; height: 200px;}
+.sq-400 {width: 400px; height: 400px;}
+.sq-500 {width: 500px; height: 500px;}
+.profile {border-radius: 50%;}
+
+.note-blue {background-color: rgb(149, 207, 255);border-left-color: dodgerblue;}
+.note-red {background-color: rgb(255, 149, 149);border-left-color: rgb(255, 30, 30);}
+.note-green {background-color: rgb(183, 255, 149);border-left-color: rgb(83, 255, 30);}
+
+.c-text {
+    text-align: center;
+}
+
+hr {
+    border: hidden;
+    width: 80%;
+    height: 3px;
+    background-image: linear-gradient(45deg, transparent, dodgerblue, transparent);
+}
+
+.flex {display: flex;}
+
+.flex-dir-v {flex-direction: column;}
+.flex-dir-h {flex-direction: row;}
+
+.con-c {margin: auto;}
+.flex-center{align-content: center; align-items: center; justify-content: center;}
+
+.flex-center-h{align-content: center; align-items: center;}
+.flex-center-v{justify-content: center;}
+
+.h-80 {width: 80%;}
+
+.caption {font-weight: 800; font-size: 16px;}
+
+.text-color-gold {color: gold;}
+
 @media (orientation: landscape) {
     .landscape, .ld {display: block;}
     .portrait, .pt {display: none;}
+
+    .c_bt_up {
+        width: 45%;
+        position: relative;
+        left: 50%;
+    }
+
+    .r_page {
+        width: 45%;
+        position: relative;
+        left: 50%;
+    }
+
+    .l_page {
+        width: 45%;
+        position: relative;
+        left: 5%;
+    }
+
+    .d-2 {
+        float: left;
+        width: 50%;
+        height: max-content;
+    }
+
+    .page-d2 {
+        height: 100%;
+    }
 }
 @media (orientation: portrait) {
     .landscape, .ld {display: none;}
     .portrait, .pt {display: block;}
+
+    .c_bt_up {
+        width: 100%;
+        position: relative;
+        left: 0%;
+    }
+
+    .r_page {
+        width: 100%;
+        position: relative;
+        left: 0%;
+    }
+
+    .l_page {
+        width: 100%;
+        position: relative;
+        left: 0%;
+    }
+
+    .d-2 {
+        float: left;
+        width: 100%;
+        height: max-content;
+    }
+
+    .page-d2 {
+        height: 200%;
+    }
 }
