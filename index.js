@@ -58,6 +58,7 @@ run()
 app.use("/css", express.static("./css"));
 app.use("/js", express.static("./js"));
 app.use("/img", express.static("./img"));
+app.use("/font", express.static("./font"));
 
 app.listen(4000, () => {
     console.log("Server open in the port " + 4000)

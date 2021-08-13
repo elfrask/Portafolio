@@ -1,8 +1,20 @@
+@font-face {
+    font-family: "autogra";
+    src: url("/font/Autography.otf");
+}
+@font-face {
+    font-family: "rich";
+    src: url("/font/Roman.ttf");
+}
+
+
 .h {width: 100%;}
 .v {height: 100%;}
 
 body {
-    background-color: #225;
+    background-color: #225;/*
+    background-image: url('/img/background.jpg');*/
+
 }
 
 * {padding: 0%; margin: 0px; color: white;}

@@ -1,6 +1,7 @@
 let N=`
 `;
 var go = e=>document.getElementById(e);
+let Api = {};
 (() => {
     function trim(p="") {
         let ca = [N, " "];
@@ -50,7 +51,7 @@ var go = e=>document.getElementById(e);
                 //console.log(`"${texto[iter]}"`);
                 
             }, delay)
-        }
+        },
     };
     let justo = true;
     let justo_list = ["lener"];
@@ -75,6 +76,16 @@ var go = e=>document.getElementById(e);
 
 
     };
+    let ind = [
+        "inicio-page",
+        "portafolio-page",
+        "acerca-page",
+    ]
+    Api.gotopage = (i) => {
+        for (let i = 0; i < ind.length; i++) go(ind[i]).style.display = "none";
+        go(ind[i]).style.display = "block";
+    };
+
     window.addEventListener("load", () => {
         draw();
 
