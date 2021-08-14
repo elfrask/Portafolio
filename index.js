@@ -1,7 +1,10 @@
 let fs = require('fs');
 let bp = require('body-parser')
-let express = require('express')
+let express = require('express');
+const { Interface } = require('readline');
 let app = express();
+
+
 
 app.use(bp.urlencoded({extended:true}))
 
@@ -16,15 +19,26 @@ let open = p => {
             }
         },
     }
-    return me
-}
+    return me // 0
+};
 
-function gen_render(conf) {
+function gen_render(conf = {head:"./public/template/head.html",template:"./public/template/template.html"}) {
+    conf = conf||{}
     let me = {
         render:(b="", h="") => {
             b=(b+"");
-            return fs.readFileSync(me.path.template, "utf-8")
-            .replace("${{head}}", fs.readFileSync(h||me.path.head, "utf-8"))
+
+            let app = "";
+            
+            if (fs.existsSync(me.path.template)) app = fs.readFileSync(me.path.template, "utf-8");
+
+            return app
+            .replace("${{head}}", ((v) => {
+                if (!fs.existsSync(v)) return "";
+                
+                return fs.readFileSync(v, "utf-8")
+            })(h||me.path.head))
+
             .replace("${{body}}", b)
         },
         path: {
@@ -41,12 +55,17 @@ let pagina = gen_render({
     template:"./public/template/template.html"
 });
 
+let page = gen_render({template:"./public/template/plantilla.html"});
+
 function run() {
     app.get("/", (req, res) => {
-
+        
+        /*pagina.render(
+            open("./public/pages/index.html").read()
+        )*/
         res.send(
-            pagina.render(
-                open("./public/pages/index.html").read()
+            page.render(
+                open("./public/pages/home.html").read()
             )
         )
     });
