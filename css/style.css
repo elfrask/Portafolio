@@ -1,0 +1,89 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+.gold {
+    color: gold;
+}
+
+hr {
+    border: none;
+    width: 80%;
+    height: 3px;
+    background-image: linear-gradient(45deg, transparent, dodgerblue, transparent);
+    margin: auto;
+}
+
+.page0 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(35, 35, 58);
+    color: white;
+}
+.page1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(72, 129, 214);
+    color: black;
+}
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.win {
+    background-color: #444;
+    overflow: hidden;
+
+}
+.win_title {
+    background-color: royalblue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.win_cont {
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.logo {
+    padding: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #226;
+    color: dodgerblue;
+    font-size: 25px;
+    font-weight: 700;
+    width: max-content;
+    cursor: pointer;
+    float: left;
+}
+
+.R_up {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #226;
+    color: dodgerblue;
+    height: max-content;
+    float: right;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.head {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #112;
+}

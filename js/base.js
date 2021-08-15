@@ -1,8 +1,19 @@
 let N=`
 `;
 var go = e=>document.getElementById(e);
-let Api = {};
+let Api = {
+    console:(e=new HTMLDivElement(), code = []) => {
+        let html = ""
+        code.forEach((i) => {
+            setTimeout(() => {
+                html = html + i[1];
+                e.innerHTML = html + "<div class=cursor_console>_</div>"
+            }, i[0]*1000)
+        })
+    }
+};
 (() => {
+
     function trim(p="") {
         let ca = [N, " "];
         while (ca.includes(p[0])) {
@@ -52,6 +63,7 @@ let Api = {};
                 
             }, delay)
         },
+        
     };
     let justo = true;
     let justo_list = ["lener"];
