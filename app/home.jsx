@@ -23,7 +23,7 @@ class App extends React.Component {
                     <Rbloqup data-aos="fade-left" />
                 </div>
                 <div className="body">
-                    <Framepage id="m1" className="medio">
+                    <Framepage id="m1" className="medio" style={{overflow:"hidden"}}>
                         <div id="con" style={{
                             width:"80%",
                             height:"500px",
@@ -143,7 +143,8 @@ class App extends React.Component {
                         </div>
                         <div style={{width:"100px", height:"200px"}}></div>
                     </Framepage>
-                    <div className="" style={{height:"auto"}}>
+                    <div className="" style={{height:"auto", overflow:"hidden"}}>
+
                         <section id="contact" />
                         
                         <div style={{
@@ -155,15 +156,39 @@ class App extends React.Component {
                                 justifyContent:"space-around"
                             }}>
 
-                                <Imglink aos="right" link="" img="/img/red/git.png"/>
-                                <Imglink aos="up" link="" img="/img/red/lin.png"/>
+                                <Imglink aos="right" link="https://github.com/elfrask/" img="/img/red/git.png"/>
                                 <Imglink aos="left" link="tel:+584248310640" img="/img/red/tel.png"/>
+                                
+                            </div>
+
+                            <div style={{
+                                width:"100%",
+                                height:"50px"
+                            }} className="medio">
+                                <div style={{
+                                    display:"flex",
+                                    justifyContent:"center",
+                                    flexDirection:"column"
+                                }}>
+                                    <Imglink 
+                                    aos="up" 
+                                    link="mailto:carlosxpages@gmail.com" 
+                                    img="/img/red/email.png"
+                                    style= {{alignSelf:"center"}}
+                                    /> <br /> <br />
+                                    <a aos="up" href="mailto:carlosxpages@gmail.com"
+                                    style={{
+                                        color:"#344",
+                                        fontSize:"16px",
+                                        fontWeight:"bold"
+                                    }}>carlosxpages@gmail.com</a>
+                                </div>
                                 
                             </div>
                             
 
                         </div>
-                        
+                        <Jump></Jump>
                     </div>
 
                 </div>

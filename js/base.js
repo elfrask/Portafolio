@@ -99,14 +99,14 @@ let Api = {
     };
 
     window.addEventListener("load", () => {
-        draw();
+        //draw();
 
         setTimeout(() => {
-            draw()
+            //draw()
         }, 200)
     });
     window.addEventListener("resize", () => {
-        draw();
+        //draw();
     });
     
 })();

@@ -1,6 +1,8 @@
 
 let page = true
 let go = q => document.getElementById(q);
+let asi = (q, r) => Object.assign(q, r);
+let toc = localStorage.getItem("toc");
 
 
 function range(i, f, j) {
@@ -14,7 +16,7 @@ function range(i, f, j) {
 
 function genlink(l) {
     return () => {
-        document.location.assign(l)
+        open(l)//document.location.assign(l)
     }
 }
 
@@ -42,7 +44,9 @@ class Imglink extends React.Component {
             <div 
             data-aos={"fade-" + this.props.aos||"up"}
             onClick={genlink(this.props.link||"")} 
-            style={{backgroundImage:`url("${this.props.img||""}")`}}
+            style={asi(
+                {backgroundImage:`url("${this.props.img||""}")`},
+                this.props.style)}
             className="imglink"
             >
                 
@@ -65,7 +69,13 @@ class Widget extends React.Component {
     render() {
         return (
             <div data-aos="fade-up" className="wid medio" onDoubleClick={() =>{
-                if (this.props.url) document.location.assign(this.props.url)
+                if (this.props.url) open(this.props.url)
+            }} onClick={() => {
+                if (!toc) {
+                    alert("dar doble click para abrir")
+                    toc = true;
+                    localStorage.setItem("toc", toc)
+                }
             }} style={{
                 backgroundImage:`url("${this.props.src||"none"}")`
             }}>
