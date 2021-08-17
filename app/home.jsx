@@ -2,110 +2,175 @@
 
 
 //import React, { Component } from 'react'
+let go = q => document.getElementById(q);
 
-let page = true
-let go = q=>document.getElementById(q)
-
-class Win extends React.Component {
-    render() {
-        return (
-            <div className="win" style={{
-                    width: (this.props.width||this.props.ancho||"100px"),
-                    height: (this.props.height||this.props.alto||"100px"),
-                    borderRadius: (this.props.rad||0)+"px"
-                }}>
-
-                <div className="win_title" style={{height:"30px"}}>
-                    {this.props.title||this.props.titulo||"Titulo"}
-                </div>
-                <div className="win_cont" style={{height:"calc("+ 
-                (this.props.height||this.props.alto||"100px") 
-                +" - 30px)"}}>
-                    <div style={{padding:"20px", width:"max-content", height:"max-content", textAlign:"center"}}>
-
-                        {this.props.children||"Contenido vacio"}
-                    </div>
-                </div>
-            </div>
-        )
-    }
+function Jump(p) {
+    return(
+        <div>
+            <br /><br /><br />
+        </div>
+    )
 }
-
-class Framepage extends React.Component {
-    render() {
-        let meco = page? "page0":"page1";
-        page = !page
-
-        return (
-            <div className={meco  +" page"} style={this.props.style||{}} id={this.props.id}>
-                {this.props.children}        
-            </div>
-        )
-    }
-}
-
-class Logo extends React.Component {
-    render() {
-        return (
-            <div className="logo">
-                Frask-Dev
-            </div>
-        )
-    }
-};
-
-
-class Rbloqup extends React.Component {
-    render() {
-        return (
-            <div className="R_up">
-                Contactar
-            </div>
-        )
-    }
-}
-
 
 class App extends React.Component {
     render() {
         //console.log(this.props)
         return (
             <div>
-                <div className="head" id="head"> 
-                    <Logo/>
+                <div className="head" id="head">
+                    <Logo data-aos="fade-right" />
 
-                    <Rbloqup />
+                    <Rbloqup data-aos="fade-left" />
                 </div>
                 <div className="body">
-                    <Framepage id="m1">
-                        <Win title="Hola mundo" alto="200px" ancho="300px" rad="10">
-                            <font style={{color:"gold"}}>
-                                Bienvenido a mi portafolio web!
-                            </font>
-                            <br /><br />
-                            <hr /> <br />
-                            <p>
-                                le dare un pequeño recorrido por este pequeño portafolio
-                            </p>
-                        </Win>
+                    <Framepage id="m1" className="medio">
+                        <div id="con" style={{
+                            width:"80%",
+                            height:"500px",
+                            backgroundColor:"black",
+                            color:"white",
+                            fontSize:"14px",
+                            padding:"10%"
+                        }}>
+                        </div>
+                        
+                        
+
+                        
+                    </Framepage>
+                    <Framepage className="medio">
+                        <p className="" data-aos="fade-up" style={{
+                            display:"flex",
+                            margin:"auto",
+                            position:"relative",
+                            maxWidth:"500px",
+                            width:"80%",
+                            textAlign:"center",
+                            top:"10%",
+                            justifyContent:"center",
+                            alignItems:"center",
+                            fontWeight:"bold",
+                            fontSize:"16px"
+                        }}>
+                            "Soy un chico de 16 años que se ha aficionado por
+                            todo el asunto de la tecnologia y la informatica a la corta edad de 8 años
+                            llevo 5 años de experiencia programando y estoy empezando mi propio emprendimiento
+                            los primero clientes les dejare un precio muy bajo para adquirir experiencia laboral".
+                        </p>
                     </Framepage>
                     <Framepage>
-                        <Win title="Hola mundo" alto="400px" ancho="300px" rad="10">
-                            Bienvenido a mi portafolio
-                        </Win>
+                        <Pub profile="/img/frask.png" style={{
+                            transform:"translate(0px, -30%)",
+                            margin:"auto"
+                        }} data-aos="fade-down">
+                            Mi nombre es <span style={{color:"gold"}}>Carlos Alejandro Pages Azocar</span>  pero tambien pueden llamarme por mi
+                            nombre de usuario, como mas les convengan. Mi objetivo es dar la mejor calidad
+                            en desarrollo web Full-Stack y desarrollo de aplicaciones al precio mas bajo.
+                        </Pub>
+                        <div className="cop meno" data-aos="fade-up">
+                            <Opt img="/img/opt/front.png" title="Herramientas Front-end" 
+                            data-aos="fade-up" data-aos-delay="500">
+                                
+                                <div>
+
+                                    {["HTML", "CSS", "JavaScript", "ReactJS"].map(e=>(
+                                        <div>
+                                            <li className="lis">{e}</li>
+                                            <br />
+                                        </div>
+                                    ))}
+                                    <Jump></Jump>
+                                </div>
+                                
+
+                            </Opt>
+                            <Opt img="/img/opt/back.png" title="Herramientas Back-end" 
+                            data-aos="fade-up" data-aos-delay="500">
+                                <div>
+
+                                    {["NodeJS", "Python", "Flask", "MongoDB", "ExpressJS"].map(e=>(
+                                        <div>
+                                            <li className="lis">{e}</li>
+                                            <br />
+                                        </div>
+                                    ))}
+                                    <Jump></Jump>
+                                </div>
+                            </Opt>
+                            <Opt img="/img/opt/win.png" title="Escritorio y Mobile" 
+                            data-aos="fade-up" data-aos-delay="500">
+                                <div>
+
+                                    {["ElectronJS", "Python Tkinter", "React Native"].map(e=>(
+                                        <div>
+                                            <li className="lis">{e}</li>
+                                            <br />
+                                        </div>
+                                    ))}
+                                    <Jump></Jump>
+                                </div>
+                            </Opt>
+                        </div>
+                        <Jump></Jump>
                     </Framepage>
                     <Framepage>
-                        Hola mundo
+                        <div className="cop meno" data-aos="fade-up" style={{position:"relative", top:"100px"}}>
+                            <h3 style={{
+                                color:"gold", width:"100%", textAlign:"center",
+                                marginTop:"50px"
+                            }}
+                            >Lo ultimo que he hecho</h3>
+                            <Jump></Jump>
+                            <Widgetbox>
+                                
+                                <Widget title="Portafolio" src="/img/proj/port.png" url="/">
+                                </Widget>
+                                <Widget title="Vacio" src="">
+                                </Widget>
+                                <Widget title="Vacio" src="">
+                                </Widget>
+                                
+                                
+                                <Widget title="Vacio" src="">
+                                </Widget>
+                                <Widget title="Vacio" src="">
+                                </Widget>
+                                <Widget title="Vacio" src="">
+                                </Widget>
+                                
+                            </Widgetbox>
+
+                        </div>
+                        <div style={{width:"100px", height:"200px"}}></div>
                     </Framepage>
-                    <Framepage>
-                        Hola mundo
-                    </Framepage>
-                    
+                    <div className="" style={{height:"auto"}}>
+                        <section id="contact" />
+                        
+                        <div style={{
+                            width:"80%",
+                            height:"max-content",
+                            padding:"10%"
+                        }}>
+                            <div className="up_c medio" style={{
+                                justifyContent:"space-around"
+                            }}>
+
+                                <Imglink aos="right" link="" img="/img/red/git.png"/>
+                                <Imglink aos="up" link="" img="/img/red/lin.png"/>
+                                <Imglink aos="left" link="tel:+584248310640" img="/img/red/tel.png"/>
+                                
+                            </div>
+                            
+
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
         )
     };
-    
+
 }
 
 
@@ -125,9 +190,9 @@ main()
 
 
 window.addEventListener("load", () => {
-    let x= {
-        height:(-go("head").offsetHeight+window.innerHeight)+"px"
+    let x = {
+        height: (-go("head").offsetHeight + window.innerHeight) + "px"
     };
-    go("m1").style.height =x.height
+    go("m1").style.height = x.height
     //console.log(x)
 })
