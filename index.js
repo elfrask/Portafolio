@@ -50,10 +50,7 @@ function gen_render(conf = {head:"./public/template/head.html",template:"./publi
     return me
 };
 
-let pagina = gen_render({
-    head:"./public/template/head.html",
-    template:"./public/template/template.html"
-});
+
 
 let page = gen_render({template:"./public/template/plantilla.html"});
 
@@ -75,6 +72,7 @@ function run() {
 run()
 
 app.use("/css", express.static("./css"));
+app.use("/sass", express.static("./sass"));
 app.use("/js", express.static("./js"));
 app.use("/img", express.static("./img"));
 app.use("/font", express.static("./font"));
