@@ -15,7 +15,7 @@ function range(i, f, j) {
 }
 
 function show() {
-    document.body.style.opacity="1";
+    go("__body__").style.opacity="1";
 }
 
 function genlink(l) {
@@ -58,12 +58,57 @@ class Imglink extends React.Component {
         )
     }
 }
+class Img extends React.Component {
+    
+    render() {
 
-class Head extends React.Component{
+        return (
+            <div 
+            data-aos={"fade-" + this.props.aos||"up"}
+            style={asi(
+                {
+                    backgroundImage:`url("${this.props.img||""}")`,
+                    width:(this.props.ancho||this.props.size||"100")+"px",
+                    height:(this.props.alto||this.props.size||"100")+"px",
+                },
+                this.props.style)}
+            className="imgb"
+            >
+                
+            </div>
+        )
+    }
+}
+
+class Boton extends React.Component{
     render() {
         return (
-            <div>
+            <div 
+            style={this.props.style||{}} 
+            className={"bt medio " + (this.props.className||"")} 
+            aos={this.props.aos}
+            >
+                {this.props.children}
+            </div>
+        )
+    }
+}
+class Cabeza extends React.Component{
+    render() {
+        return (
+            <div className="Cabeza">
+
+                <Boton aos="">
+                    Portafolio
+                </Boton>
+
+                <Img img="/img/logo.png" aos="down" size="50"/>
                 
+                <Boton>
+                    Contactame
+                </Boton>
+                
+
             </div>
         )
     }
@@ -72,7 +117,7 @@ class Head extends React.Component{
 class Floor extends React.Component{
     render() {
         return (
-            <div>
+            <div className="Pie">
                 
             </div>
         )
@@ -80,11 +125,20 @@ class Floor extends React.Component{
 }
 
 
-class Body extends React.Component {
+class Cuerpo extends React.Component {
     render() {
+        
         return (
             <div className="Body">
-                <Head/>
+                <div style={{
+                    width:"100%",
+                    height:"100%",
+                    position:"fixed",
+                    zIndex:"-1"
+                }}>
+                    
+                </div>
+                <Cabeza/>
                 <div>
                     {this.props.children}
                 </div>

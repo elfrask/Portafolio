@@ -1,15 +1,20 @@
 
 
-function App(pro) {
-    return(
-        <Body>
-            <h1>
-                Hola mundo
-            </h1>
-        </Body>
-    )
+class App extends React.Component {
+    render() {
+        return (
+            <Cuerpo>
+                
+
+                <div>info</div>
+                <div>tecnologias</div>
+                <div>portafolio</div>
+            </Cuerpo>
+        )
+    }
 };
 
 
 
-ReactDOM.render(<App/>);
+ReactDOM.render(<App/>, go("__body__"));
+show()
