@@ -1,8 +1,8 @@
 $bg-color: #333;
-$head-bg-color: rgb(44, 42, 42);
+$head-bg-color: rgba(44, 42, 42, 0.75);
 $bt-color: #00000033;
 $bt-color-hover: #00000066;
-$page-color: #0066ff;
+$page-color: #0066ff88;
 
 .gold {
     color: gold;
@@ -108,7 +108,7 @@ body {
 .targ {
     padding: 10px;
     color: black;
-    box-shadow: 20px 20px 0px #111;
+    box-shadow: 20px 20px 0px #1118;
     transform: translate(-10px, -10px) scale(1);
     transition: 0.4s;
 }

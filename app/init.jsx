@@ -14,10 +14,12 @@ class Block extends React.Component {
     }
 }
 
-class Projects extends React.Component {
+class Projects_main extends React.Component {
     render() {
         return (
-            <div>
+            <div style={{
+                width:"100%", height:"max-content"
+            }}>
                 
             </div>
         )
@@ -125,7 +127,7 @@ class App extends React.Component {
                 <Block style={{
                     backgroundColor:"#222"
                 }}>
-                    <Projects/>
+                    <Projects_main/>
                 </Block>
 
             </Cuerpo>

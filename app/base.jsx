@@ -88,7 +88,7 @@ class Img extends React.Component {
                 width:(this.props.ancho||this.props.size||"100")+"px",
                 height:(this.props.alto||this.props.size||"100")+"px",
             });
-        console.log(toli)
+        //console.log(toli)
         return (
             <div 
             className={"imgb " + (this.props.className||"")}
@@ -170,7 +170,7 @@ class Floor extends React.Component{
                 </div>
                 <div style={{
                     width:"calc(100%)",
-                    height:"40px"
+                    height:"100px"
                 }}>
 
                 </div>
@@ -187,16 +187,48 @@ class Cuerpo extends React.Component {
         
         return (
             <div className="Body">
+                <div style={{
+                    zIndex:"0"
+                }}>
 
-                <div>
+                  
 
+                    <div style={{
+                        width:"100%",
+                        height:"max-content",
+                        overflow:"auto",
+                        zIndex:"1",
+                        position:"absolute"
+                        
+                    }}>
+
+                        <div style={{
+                            width:"100%",
+                            overflowX:"hidden"
+
+                        }}>
+                            <Cabeza/>
+                            <div className="bbd" style={{width:"100%"/*, minHeight:"calc(100% - 90px)"*/}}>
+                                {this.props.children}
+                            </div>
+                            <Floor/>
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="particles-js" style={{
+                        position:"absolute",
+                        top:"0",
+                        width:"100%",
+                        height:"100%",
+
+                    }}>
+
+                    </div>
+                    
                 </div>
                 
-                <Cabeza/>
-                <div className="bbd" style={{width:"100%", minHeight:"calc(100% - 90px)"}}>
-                    {this.props.children}
-                </div>
-                <Floor/>
+                
             </div>
         )
     }

@@ -34,11 +34,14 @@
 
     setTimeout(()=> {
         d.style.opacity = "1";
-        
+        setTimeout(()=> {
+            AOS.init()
+            
+        }, 400)
     }, 1000)
     
     
-    AOS.init()
+    
     
 </script>
 </html>
