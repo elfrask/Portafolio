@@ -91,7 +91,7 @@ class Img extends React.Component {
         console.log(toli)
         return (
             <div 
-            className="imgb"
+            className={"imgb " + (this.props.className||"")}
             style={toli}
             onClick={genlink(this.props.link||"")} 
             >
@@ -159,7 +159,7 @@ class Floor extends React.Component{
                     <Imglink img="/img/red/git.png" link="https://github.com/elfrask" aos="left"/>
 
                 </div>
-                <br />
+                <br /> <br />
                 <div style={{
                     display:"flex",
                     justifyContent:"space-around",
@@ -187,9 +187,13 @@ class Cuerpo extends React.Component {
         
         return (
             <div className="Body">
+
+                <div>
+
+                </div>
                 
                 <Cabeza/>
-                <div className="bbd" style={{width:"100%"}}>
+                <div className="bbd" style={{width:"100%", minHeight:"calc(100% - 90px)"}}>
                     {this.props.children}
                 </div>
                 <Floor/>

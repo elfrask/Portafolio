@@ -10,6 +10,10 @@ let Api = {
                 e.innerHTML = html + "<div class=cursor_console>_</div>"
             }, i[0]*1000)
         })
+    },
+    link:(l)=> {
+        let int = go("__interface__");
+        
     }
 };
 (() => {
@@ -25,19 +29,6 @@ let Api = {
         return p
     };
     let mets = {
-        "fill":(e=new HTMLDivElement()) => {
-            let base = e.getAttribute("base");
-            let obj = e.getAttribute("obj");
-            let metodo = e.getAttribute("dir-fill")||"h";
-
-            if (["h", "H", "0"].includes(metodo))
-            e.style.width = (go(base).offsetWidth-go(obj).offsetWidth) +"px";
-            
-            else if (["v", "V", "1"].includes(metodo))
-            e.style.height = (go(base).offsetHeight-go(obj).offsetHeight) +"px";
-            
-            //console.log("llego")
-        },
         "lener":(e=new HTMLDivElement()) => {
             let texto = e.getAttribute("text")||"!";
             let fin = e.getAttribute("onfinish")||"";
@@ -88,15 +79,7 @@ let Api = {
 
 
     };
-    let ind = [
-        "inicio-page",
-        "portafolio-page",
-        "acerca-page",
-    ]
-    Api.gotopage = (i) => {
-        for (let i = 0; i < ind.length; i++) go(ind[i]).style.display = "none";
-        go(ind[i]).style.display = "block";
-    };
+    
 
     window.addEventListener("load", () => {
         //draw();
