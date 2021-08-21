@@ -87,7 +87,7 @@ class App extends React.Component {
                                         margin:"auto", width:"250px", minHeight:"220px",
                                         backgroundColor:"crimson"
                                         }}>
-                                        {["html-5.png", "Css3.png", "javascript.png",
+                                        {["html-5.png", "css3.png", "javascript.png",
                                         "NodeJS.png", "express.png", "electron.png",
                                         "git.png", "github.png", "react-native.png", 
                                         "sass.png", "python.png", "flask.png"].map(e=>{

@@ -64,12 +64,18 @@ function genlink(l) {
         if (l) document.location.assign(l)
     }
 }
-function copy(p) {
+function copiar(p) {
     let me = go("__cop__");
     
     me.value = p+"";
     me.select();
     document.execCommand("copy");
+}
+function clink(l, msg) {
+    return () => {
+        copiar(l)
+        alert(msg||"link copiado")
+    }
 }
 class Mult extends React.Component {
     render() {
@@ -81,11 +87,16 @@ class Mult extends React.Component {
 class Imglink extends React.Component {//style, size, link
     
     render() {
-
+        let cc = (()=>{});
+        if (typeof(this.props.link) == "string") {
+            cc = genlink(this.props.link||"")
+        } else {
+            cc = this.props.link
+        }
         return (
             <div 
             data-aos={"fade-" + (this.props.aos||"up")}
-            onClick={genlink(this.props.link||"")} 
+            onClick={cc} 
             className="Imglink"
             style={asi(
                 {
@@ -182,8 +193,8 @@ class Floor extends React.Component{
                         height:"max-content"
                     }}>
                         <Imglink img="/img/red/git.png" link="https://github.com/elfrask" aos="right"/>
-                        <Imglink img="/img/red/lin.png" link="https://github.com/elfrask" aos="up"/>
-                        <Imglink img="/img/red/ins.png" link="https://github.com/elfrask" aos="left"/>
+                        <Imglink img="/img/red/ins.png" link="https://www.instagram.com/soyelfrask/" aos="up"/>
+                        <Imglink img="/img/red/dis.png" link={clink("ElFrask#4898", "el nombre a sido copiado")} aos="left"/>
 
                     </div>
                     
