@@ -1,3 +1,7 @@
+
+
+
+
 class Block extends React.Component {
     render() {
         return (
@@ -14,17 +18,6 @@ class Block extends React.Component {
     }
 }
 
-class Projects_main extends React.Component {
-    render() {
-        return (
-            <div style={{
-                width:"100%", height:"max-content"
-            }}>
-                
-            </div>
-        )
-    }
-}
 
 class App extends React.Component {
     render() {
@@ -54,17 +47,18 @@ class App extends React.Component {
                                         fontSize:"larger", textAlign:"center", backgroundColor:"gold",
                                         color:"black", width:"100%"
                                         }}>
-                                        Saludos y bienvenidas:
+                                        ¡Bienvenidos!
                                     </h1>
                                     <br />
                                     <div className="targ saludo" style={{
-                                        color:"black", backgroundColor:"white"
+                                        color:"white", backgroundColor:"#333", fontSize:"20px"
                                         }}>
-                                        "Saludos! Mi nombre es<span className="text-color-page"> Carlos Pages </span>
-                                        aunque me pueden llamar <span className="gold"> Frask </span> 
-                                        sea bienvenido a mi Portafolio. Soy desarrollador web 
-                                        Full-stack freelancer autodidacta y con muchas 
-                                        ganas de aprender".
+                                        "¡Saludos! Mi nombre es<span className="text-color-page"> Carlos Pagés </span>
+                                        aunque me pueden llamar por mi nombre de usuario <span style={{color:"gold"}}> Frask </span> 
+                                        sea bienvenido a mi portafolio. Soy un desarrollador web 
+                                        Full-stack y desarrollador de software
+                                        autodidacta, con las constantes ganas de aprender mas
+                                        y de mano de obra barata".
                                     </div>
                                 </div>
                                 
@@ -124,11 +118,7 @@ class App extends React.Component {
                     
 
                 </Block>
-                <Block style={{
-                    backgroundColor:"#222"
-                }}>
-                    <Projects_main/>
-                </Block>
+                <Proj_list data={proj} title="Proyectos que he trabajado" />
 
             </Cuerpo>
         )

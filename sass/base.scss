@@ -1,4 +1,4 @@
-$bg-color: #333;
+$bg-color: rgb(41, 40, 65);
 $head-bg-color: rgba(44, 42, 42, 0.75);
 $bt-color: #00000033;
 $bt-color-hover: #00000066;
@@ -96,6 +96,14 @@ body {
     
 }
 
+.partjs{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: $bg-color;
+}
+
 #__body__ {
     background-color: $bg-color;
     transition: 1s;
@@ -118,6 +126,12 @@ body {
     transform: translate(0px, 0px) scale(1);
 }
 
+.title {
+    @extend .text-impact;
+    background-color: gold;
+    color: black;
+    cursor: default;
+}
 
 .Cabeza {
     width: calc(100% - 40px);
@@ -202,6 +216,7 @@ body {
 
 .saludo span, .saludo font {
     @extend .text-impact;
+    
 }
 
 .text-color-page {
@@ -212,6 +227,53 @@ body {
     background-color: $page-color;
 }
 
+.proj-box {
+    width: 270px;
+    height: max-content;
+    padding: 0px;
+    cursor: pointer;
+    background-color: #9298;
+    margin:10px;
+}
+
+.proj-title {
+    @extend .text-impact;
+    background-color: gold;
+    color: #111;
+    padding: 10px;
+    width: 250px;
+    height: max-content;
+    text-align: center;
+
+}
+
+
+.proj-cont {
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    width: 230px;
+    min-height: 100px;
+    height: max-content;
+    font-size: 16px;
+    text-align: center;
+    margin: auto;
+}
+
+.proj-det {
+    width: 270px;
+    height: max-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.proj-img {
+    @extend .imgb;
+
+    width: 270px;
+    height: 170px;
+    background-color: #00000033;
+    background-size: cover;
+}
+
 .box {
     padding: 20px;
 }
@@ -220,6 +282,11 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.centri {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 

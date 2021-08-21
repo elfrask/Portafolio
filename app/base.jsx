@@ -1,4 +1,3 @@
-
 let page = true
 let go = q => document.getElementById(q);
 let asi = (q, r) => Object.assign(q, r);
@@ -11,8 +10,6 @@ function set(d=(new React.Component()), a={}) {
 
     return d
 }
-
-
 function range(i, f, j) {
     j=j||1
     let salida = []
@@ -21,7 +18,6 @@ function range(i, f, j) {
     };
     return(salida)
 }
-
 function show() {
     go("__body__").style.opacity="1";
     
@@ -30,14 +26,44 @@ function show() {
         document.body.style.overflow="auto";
 
     },1000)
+};
+function gen_proj(title, img, data, link) {
+    return(
+        {
+            img:(img || "none"),
+            title:(title || "Titulo"),
+            link:(link || "/"),
+            data:(data || "")
+        }
+    )
 }
+
+let proj = [
+    gen_proj(
+        "Portafolio",
+        "/img/proj/port.png",
+        `
+            Hola Bienvenido este es mi portafolio 
+            puedes ver como es dandole click aqui
+            o solo explora esta lading page.
+        `,
+        "/"
+    )
+]
+proj.push(
+    proj[0],
+    proj[0],
+    proj[0],
+    proj[0],
+    proj[0]
+)
+
 
 function genlink(l) {
     return () => {
         if (l) document.location.assign(l)
     }
 }
-
 function copy(p) {
     let me = go("__cop__");
     
@@ -45,7 +71,6 @@ function copy(p) {
     me.select();
     document.execCommand("copy");
 }
-
 class Mult extends React.Component {
     render() {
         return (
@@ -53,8 +78,7 @@ class Mult extends React.Component {
         )
     }
 }
-
-class Imglink extends React.Component {
+class Imglink extends React.Component {//style, size, link
     
     render() {
 
@@ -69,7 +93,7 @@ class Imglink extends React.Component {
                     width:(this.props.size||"50") +"px",
                     height:(this.props.size||"50") +"px",
                 },
-                this.props.style
+                this.props.style||{}
             )}
             >
                 
@@ -77,7 +101,7 @@ class Imglink extends React.Component {
         )
     }
 }
-class Img extends React.Component {
+class Img extends React.Component {//style, size, className, link
     
     render() {
 
@@ -100,7 +124,7 @@ class Img extends React.Component {
         )
     }
 }
-class Boton extends React.Component{
+class Boton extends React.Component{//style, className, link, aos, nodos
     render() {
         return (
             <div 
@@ -142,35 +166,56 @@ class Cabeza extends React.Component{
         )
     }
 }
-
 class Floor extends React.Component{
     render() {
         return (
             <div className="Pie">
                 <section id="contact"></section>
-                <div style={{
-                    display:"flex",
-                    justifyContent:"space-around",
-                    width:"calc(100%)",
-                    height:"max-content"
+                <div className="aco" style={{
+                    alignItems:"center"
                 }}>
-                    <Imglink img="/img/red/git.png" link="https://github.com/elfrask" aos="right"/>
-                    <Imglink img="/img/red/git.png" link="https://github.com/elfrask" aos="up"/>
-                    <Imglink img="/img/red/git.png" link="https://github.com/elfrask" aos="left"/>
+
+                    <div style={{
+                        display:"flex",
+                        justifyContent:"space-around",
+                        width:"calc(100%)",
+                        height:"max-content"
+                    }}>
+                        <Imglink img="/img/red/git.png" link="https://github.com/elfrask" aos="right"/>
+                        <Imglink img="/img/red/lin.png" link="https://github.com/elfrask" aos="up"/>
+                        <Imglink img="/img/red/ins.png" link="https://github.com/elfrask" aos="left"/>
+
+                    </div>
+                    
+                    <div style={{
+                        display:"flex",
+                        justifyContent:"space-around",
+                        width:"calc(100%)",
+                        height:"max-content"
+                    }}>
+                        <div style={{
+                            textAlign:"center",
+                            marginTop:"40px"
+                        }}>
+                            ¿Deseas contactarme?
+                            <br />
+                            <br />
+                            <br />
+                            <a href="mailto:carlosxpages@gmail.com">carlosxpages@gmail.com</a>
+                            <br /><br />
+                            <a href="tel:+584248310640">Telegram</a>
+
+                        </div>
+                    </div>
+                    
 
                 </div>
-                <br /> <br />
-                <div style={{
-                    display:"flex",
-                    justifyContent:"space-around",
-                    width:"calc(100%)",
-                    height:"max-content"
-                }}>
-                    Contactame
-                </div>
+                
+                
+                
                 <div style={{
                     width:"calc(100%)",
-                    height:"100px"
+                    height:"50px"
                 }}>
 
                 </div>
@@ -178,9 +223,7 @@ class Floor extends React.Component{
         )
     }
 }
-
-
-class Cuerpo extends React.Component {
+class Cuerpo extends React.Component {//nodos
     
     render() {
 
@@ -216,13 +259,7 @@ class Cuerpo extends React.Component {
                         
                     </div>
                     
-                    <div id="particles-js" style={{
-                        position:"absolute",
-                        top:"0",
-                        width:"100%",
-                        height:"100%",
-
-                    }}>
+                    <div id="particles-js" className="partjs">
 
                     </div>
                     
@@ -230,6 +267,62 @@ class Cuerpo extends React.Component {
                 
                 
             </div>
+        )
+    }
+}
+class Project extends React.Component {//nodos, title, img, url
+    render() {
+        return (
+            <div className="proj-box targ" onClick={genlink(this.props.url||"")}>
+                <div className="proj-det">
+                    <div className="proj-title">
+                        {this.props.title||""}
+                    </div>
+                    <div className="proj-cont medio">
+                        {this.props.children||""}
+                    </div>
+                </div>
+                <div className="proj-img" style={{
+                    backgroundImage:"url("+(this.props.img||"")+")",
+                }}>
+
+                </div>
+            </div>
+        )
+    }
+}
+class Proj_list extends React.Component {// data, bg, title
+    render() {
+        return (
+
+            <Block className="medio" style={{
+                backgroundColor:this.props.bg||"#2227",
+                flexDirection:"column"
+            }}>
+                <div style={{width:"100%", height:"100px"}}/>
+                <div className="targ title">
+                    {this.props.title||"Titulo"}
+                </div>
+
+
+
+                <div className="aco centri" style={{
+                    width:"80%", height:"max-content", margin:"10%"
+                }}>
+
+                    {(this.props.data||[]).map(e=> {
+                        return (
+                            <Project img={e.img} title={e.title} url={e.link}>
+                                {e.data}
+                            </Project>
+                        )
+                    })}
+                    
+                </div>
+
+
+
+            </Block>
         )
     }
 }

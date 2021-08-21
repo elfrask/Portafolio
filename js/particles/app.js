@@ -23,7 +23,7 @@ setTimeout(()=> {
           }
         },
         "color": {
-          "value": "#ffffff"
+          "value": "#ff00ff"
         },
         "shape": {
           "type": "circle",
@@ -41,8 +41,8 @@ setTimeout(()=> {
           }
         },
         "opacity": {
-          "value": 0.5,
-          "random": false,
+          "value": 1,
+          "random": true,
           "anim": {
             "enable": false,
             "speed": 1,
@@ -63,8 +63,8 @@ setTimeout(()=> {
         "line_linked": {
           "enable": true,
           "distance": 150,
-          "color": "#ffffff",
-          "opacity": 0.4,
+          "color": "#ff88ff",
+          "opacity": 1,
           "width": 1
         },
         "move": {
