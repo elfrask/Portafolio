@@ -1,5 +1,58 @@
 
 
+let rentec = (t, img) => ({title:t, img:img})
+
+
+let tecno = [
+    rentec(
+        "HTML",
+        "html-5.png"
+    ),
+    rentec(
+        "CSS",
+        "css3.png"
+    ),
+    rentec(
+        "JavaScript",
+        "javascript.png"
+    ),
+    rentec(
+        "NodeJS",
+        "NodeJS.png"
+    ),
+    rentec(
+        "ExpressJS",
+        "express.png"
+    ),
+    rentec(
+        "ElectronJS",
+        "electron.png"
+    ),
+    rentec(
+        "Git",
+        "git.png"
+    ),
+    rentec(
+        "Github",
+        "github.png"
+    ),
+    rentec(
+        "ReactJS",
+        "react-native.png"
+    ),
+    rentec(
+        "Sass",
+        "sass.png"
+    ),
+    rentec(
+        "Python",
+        "python.png"
+    ),
+    rentec(
+        "Flask",
+        "flask.png"
+    )
+]
 
 
 class Block extends React.Component {
@@ -53,12 +106,11 @@ class App extends React.Component {
                                     <div className="targ saludo" style={{
                                         color:"white", backgroundColor:"#333", fontSize:"20px"
                                         }}>
-                                        "¡Saludos! Mi nombre es<span className="text-color-page"> Carlos Pagés </span>
-                                        aunque me pueden llamar por mi nombre de usuario <span style={{color:"gold"}}> Frask </span> 
+                                        "¡Saludos! Mi nombre es<span className="text-color-page"> Frask </span> 
                                         sea bienvenido a mi portafolio. Soy un desarrollador web 
                                         Full-stack y desarrollador de software
-                                        autodidacta, con las constantes ganas de aprender mas
-                                        y de mano de obra barata".
+                                        autodidacta, con las constantes ganas de aprender mas.
+                                        Puedes contactarme en caso que nesecites mas informacion".
                                     </div>
                                 </div>
                                 
@@ -87,13 +139,10 @@ class App extends React.Component {
                                         margin:"auto", width:"250px", minHeight:"220px",
                                         backgroundColor:"crimson"
                                         }}>
-                                        {["html-5.png", "css3.png", "javascript.png",
-                                        "NodeJS.png", "express.png", "electron.png",
-                                        "git.png", "github.png", "react-native.png", 
-                                        "sass.png", "python.png", "flask.png"].map(e=>{
+                                        {tecno.map(e=>{
                                             return(
                                                 <Img 
-                                                img={"/img/logos/"+e} 
+                                                img={"/img/logos/"+e.img} 
                                                 aos="none" 
                                                 size="60"
                                                 style={{
@@ -102,7 +151,9 @@ class App extends React.Component {
                                                     backgroundColor:"#222",
                                                     backgroundSize:"80%"
                                                 }}
+                                                title={e.title}
                                                 className=""
+                                                click={x=>{alert(e.title)}}
                                                 
                                                 />
                                             )
@@ -118,7 +169,8 @@ class App extends React.Component {
                     
 
                 </Block>
-                <Proj_list data={proj} title="Proyectos que he trabajado" />
+                <Proj_list data={proj} title="Mis proyectos" />
+                <Proj_list data={proj} title="Otros proyectos" />
 
             </Cuerpo>
         )

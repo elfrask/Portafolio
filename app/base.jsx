@@ -40,6 +40,17 @@ function gen_proj(title, img, data, link) {
 
 let proj = [
     gen_proj(
+        "CLS Project",
+        "/img/proj/cls.png",
+        `
+            CLS es un lenguaje de programacion
+            orientado a objetos y facil de usar,
+            creado por el autor de esta pagina
+            (Frask)
+        `,
+        "/clsweb"
+    ),
+    gen_proj(
         "Portafolio",
         "/img/proj/port.png",
         `
@@ -48,15 +59,15 @@ let proj = [
             o solo explora esta lading page.
         `,
         "/"
-    )
+    ),
 ]
 proj.push(
-    proj[0],
-    proj[0],
-    proj[0],
-    proj[0],
-    proj[0]
+    proj[1],
+    proj[1],
+    proj[1],
+    proj[1]
 )
+
 
 
 function genlink(l) {
@@ -122,13 +133,21 @@ class Img extends React.Component {//style, size, className, link
                 backgroundImage:`url("${this.props.img||""}")`,
                 width:(this.props.ancho||this.props.size||"100")+"px",
                 height:(this.props.alto||this.props.size||"100")+"px",
-            });
+            }
+        );
         //console.log(toli)
+        let click = genlink(this.props.link||"");
+        if (this.props.click) {
+            click = this.props.click;
+        };
+        
         return (
             <div 
             className={"imgb " + (this.props.className||"")}
             style={toli}
-            onClick={genlink(this.props.link||"")} 
+            onClick={click}
+            title={this.props.title||"Imagen"}
+            alt={this.props.title||"Frask"}
             >
                 
             </div>
