@@ -40,6 +40,16 @@ function gen_proj(title, img, data, link) {
 
 let proj = [
     gen_proj(
+        "Portafolio",
+        "/img/proj/port.png",
+        `
+            Hola Bienvenido este es mi portafolio 
+            puedes ver como es dandole click aqui
+            o solo explora esta lading page.
+        `,
+        "/"
+    ),
+    gen_proj(
         "CLS Project",
         "/img/proj/cls.png",
         `
@@ -51,21 +61,21 @@ let proj = [
         "/clsweb"
     ),
     gen_proj(
-        "Portafolio",
-        "/img/proj/port.png",
+        "Temmie Conga!",
+        "/img/proj/temmie.png",
         `
-            Hola Bienvenido este es mi portafolio 
-            puedes ver como es dandole click aqui
-            o solo explora esta lading page.
+            La cura definitiva a la deprecion
+            al alcance de un solo click.
+            Baila con temmie y recolectalos
         `,
-        "/"
+        "/temtem"
     ),
 ]
 proj.push(
-    proj[1],
-    proj[1],
-    proj[1],
-    proj[1]
+    proj[0],
+    proj[0],
+    proj[0],
+    proj[0]
 )
 
 

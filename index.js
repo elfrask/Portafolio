@@ -57,15 +57,22 @@ let page = gen_render({template:"./public/template/plantilla.html"});
 function run() {
     app.get("/", (req, res) => {
         
-        /*pagina.render(
+        /*
+        pagina.render(
             open("./public/pages/index.html").read()
-        )*/
+        )
+        */
         res.send(
             page.render(
                 open("./public/pages/home.html").read()
             )
         )
     });
+    app.get("/temtem", (req, res) => {
+        res.send(
+            open("./public/pages/temm.html").read()
+        )
+    })
     
 }; 
 
@@ -75,6 +82,7 @@ app.use("/css", express.static("./css"));
 app.use("/sass", express.static("./sass"));
 app.use("/js", express.static("./js"));
 app.use("/img", express.static("./img"));
+app.use("/music", express.static("./music"));
 app.use("/font", express.static("./font"));
 app.use("/app", express.static("./app"));
 
