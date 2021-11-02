@@ -56,7 +56,7 @@ let page = gen_render({template:"./public/template/plantilla.html"});
 
 function run() {
 	app.get("/clsweb", (req, res) => {
-		res.redirect("https://clsweb.frask.repl.co")
+		res.redirect("https://clswebsite.frask.repl.co/")
 	})
     app.get("/", (req, res) => {
         
