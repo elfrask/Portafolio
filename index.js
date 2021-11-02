@@ -55,6 +55,9 @@ function gen_render(conf = {head:"./public/template/head.html",template:"./publi
 let page = gen_render({template:"./public/template/plantilla.html"});
 
 function run() {
+	app.get("/", (req, res) => {
+		res.redirect("https://clsweb.frask.repl.co")
+	})
     app.get("/", (req, res) => {
         
         /*
