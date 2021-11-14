@@ -21,7 +21,7 @@ function range(i, f, j) {
 function show() {
     go("__body__").style.opacity="1";
     
-    setTimeout(()=> {
+    setTimeout(() => {
 
         document.body.style.overflow="auto";
 
@@ -40,21 +40,22 @@ function gen_proj(title, img, data, link) {
 
 let proj = [
     gen_proj(
-        "Portafolio",
-        "/img/proj/port.png",
+        "Blogedit",
+        "/img/proj/blogedit.png",
         `
-            Hola Bienvenido este es mi portafolio 
-            puedes ver como es dandole click aqui
-            o solo explora esta lading page.
+            Blogedit es un editor de contenido
+            (CMS minimalista) para editar el 
+            contenido de tus blog's o web's 
+            basadas en contenido.
         `,
-        "/"
+        "/blogedit"
     ),
     gen_proj(
         "CLS Project",
         "/img/proj/cls.png",
         `
-            CLS es un lenguaje de programacion
-            orientado a objetos y facil de usar,
+            CLS es un lenguaje de programación
+            orientado a objetos y fácil de usar,
             creado por el autor de esta pagina
             (Frask)
         `,
@@ -64,15 +65,16 @@ let proj = [
         "Temmie Conga!",
         "/img/proj/temmie.png",
         `
-            La cura definitiva a la deprecion
-            al alcance de un solo click.
-            Baila con temmie y recolectalos
+            La cura definitiva a la depresión
+            al alcance de un solo clic.
+            Baila con temmie y recolecta los a 
+            todos :D y no dejes ni uno
         `,
         "/temtem"
     ),
 ]
 proj.push(
-    proj[0],
+
     proj[0],
     proj[0],
     proj[0]
@@ -108,7 +110,7 @@ class Mult extends React.Component {
 class Imglink extends React.Component {//style, size, link
     
     render() {
-        let cc = (()=>{});
+        let cc = (() =>{});
         if (typeof(this.props.link) == "string") {
             cc = genlink(this.props.link||"")
         } else {
