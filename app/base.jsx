@@ -48,7 +48,7 @@ let proj = [
             contenido de tus blog's o web's 
             basadas en contenido.
         `,
-        "/blogedit"
+        "/blog"
     ),
     gen_proj(
         "CLS Project",

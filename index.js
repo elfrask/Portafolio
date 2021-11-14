@@ -58,9 +58,8 @@ function run() {
 	app.get("/clsweb", (req, res) => {
         res.redirect("https://clswebsite.frask.repl.co/")
     });
-    app.get("/blogedit", (req, res) => {
-        res.redirect("https://blogedit.frask.repl.co/")
-    });
+    app.use("/blog", express.static("./public/apps/blogedit"));
+    app.use("/blogedit", express.static("./public/apps/blogedit/blogedit"));
 
     app.get("/", (req, res) => {
         
