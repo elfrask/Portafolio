@@ -46,7 +46,7 @@ let proj = [
             Blogedit es un editor de contenido
             (CMS minimalista) para editar el 
             contenido de tus blog's o web's 
-            basadas en contenido.
+            basadas en informacion.
         `,
         "/blog"
     ),
