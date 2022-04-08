@@ -315,7 +315,7 @@ class Cuerpo extends React.Component {//nodos
 class Project extends React.Component {//nodos, title, img, url
     render() {
         return (
-            <div className="proj-box targ" onClick={genlink(this.props.url||"")}>
+            <div className="proj-box targ-down" onClick={genlink(this.props.url||"")}>
                 <div className="proj-det">
                     <div className="proj-title">
                         {this.props.title||""}
@@ -342,13 +342,13 @@ class Proj_list extends React.Component {// data, bg, title
                 flexDirection:"column"
             }}>
                 <div style={{width:"100%", height:"100px"}}/>
-                <div className="targ title">
+                <div className="targ-down title">
                     {this.props.title||"Titulo"}
                 </div>
 
 
 
-                <div className="aco centri" style={{
+                <div className="centri" style={{
                     width:"80%", height:"max-content", margin:"10%"
                 }}>
 

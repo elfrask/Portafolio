@@ -89,58 +89,58 @@ class App extends React.Component {
                         margin:"auto",
                     
                     }}>
-                        <div className="d2 medio" style={{cursor:"default"}}>
+                        <div style={{
+                            "width":"100%",
                             
-                            <div data-aos="fade-right" data-aos-delay="400"
-                            className="box medio" 
-                            style={{width:"250px", height:"max-content"}}>
-
-                                <div>
-                                    <h1 className="gold text-impact targ" style={{
-                                        fontSize:"larger", textAlign:"center", backgroundColor:"gold",
-                                        color:"black", width:"100%"
-                                        }}>
-                                        ¡Bienvenidos!
-                                    </h1>
-                                    <br />
-                                    <div className="targ saludo" style={{
-                                        color:"white", backgroundColor:"#333", fontSize:"20px"
-                                        }}>
-                                        "¡Saludos! Mi nombre es<span className="text-color-page"> Frask </span> 
-                                        sea bienvenido a mi portafolio. Soy un desarrollador web 
-                                        Full-stack y desarrollador de software
-                                        autodidacta, con las constantes ganas de aprender mas.
-                                        Puedes contactarme en caso que nesecites mas informacion".
-                                    </div>
-                                </div>
-                                
+                        }} className="">
+                            <div className="medio" style={{
+                                padding:"10%", 
+                                "height":"calc(100vh - 180px)",
+                                "width":"80%",
+                                flexDirection:"column"
+                            }}>
+                                <h1 className="shadown-title">
+                                    Frask
+                                </h1>
+                                <hr />
+                                <p className="text-center">
+                                    Hola! Soy Frask un desarrollador web full-stack,
+                                    game developer y desarrollador de apps de escritorio.
+                                </p>
                             </div>
                             
-                        </div>
 
-                        <div className="d2 medio">
-                        
-
-                            <div data-aos="fade-left" data-aos-delay="400"
+                            <div 
                             className="box medio" 
-                            style={{width:"50%", height:"max-content"}}
+                            style={{
+                                padding:"10%", 
+                                "height":"calc(100vh - 180px)",
+                                "width":"80%",
+                                flexDirection:"column",    
+                                paddingBottom:"100px"
+                            }}
                             
                             >
 
-                                <div>
-                                    <h1 className="gold text-impact targ" style={{
-                                        fontSize:"larger", textAlign:"center", backgroundColor:"gold",
-                                        color:"black"
-                                        }}>
-                                        Tecnologias que uso:
-                                    </h1>
-                                    <br /> 
-                                    <div className="spacing targ" style={{
-                                        margin:"auto", width:"250px", minHeight:"220px",
-                                        backgroundColor:"crimson"
-                                        }}>
-                                        {tecno.map(e=>{
-                                            return(
+                                <h1
+                                className="gold text-impact targ-down" style={{
+                                    fontSize:"larger", textAlign:"center", backgroundColor:"gold",
+                                    color:"black", width:"100%"
+                                    }}>
+                                    Tecnologias que uso:
+                                </h1>
+                                <br /> 
+                                <div 
+                                
+                                className="spacing targ-down" style={{
+                                    width:"100%", height:"max-content",
+                                    backgroundColor:"crimson"
+                                    }}>
+                                    {tecno.map(e=>{
+                                        return(
+                                            <div alt={e.title} className="medio" style={{
+                                                "flexDirection":"column"
+                                            }}>
                                                 <Img 
                                                 img={"/img/logos/"+e.img} 
                                                 aos="none" 
@@ -153,24 +153,31 @@ class App extends React.Component {
                                                 }}
                                                 title={e.title}
                                                 className=""
-                                                click={x=>{alert(e.title)}}
+                                                
                                                 
                                                 />
-                                            )
-                                        })}
-                                    </div>
+                                                <span className="fonti_title" style={{
+                                                    "paddingBottom":"10px"
+                                                }}>
+                                                    {e.title}
+                                                </span>
+
+                                            </div>
+                                        )
+                                    })}
                                 </div>
 
                             </div>
 
+
                         </div>
+
                         
                     </div>
                     
 
                 </Block>
                 <Proj_list data={proj} title="Mis proyectos" />
-                <Proj_list data={proj} title="Otros proyectos" />
 
             </Cuerpo>
         )
