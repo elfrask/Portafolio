@@ -1,4 +1,4 @@
-paises admitidos en replit
+paises admitidos en replit:
 
 + Venezuela
 + Colombia
@@ -6,10 +6,20 @@ paises admitidos en replit
 + Chile
 + Argentina
 + Bolivia
-- España
-
++ España
 
 no admitidos:
 
 - Cuba
 
+Pendientes:
+
+/ Uruaguay
+/ Republica Dominicana
+/ Nicaragua
+/ Honduras
+/ Salvador
+/ Guatemala
+/ Panama
+/ Paraguay
+/ Peru
