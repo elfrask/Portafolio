@@ -177,7 +177,7 @@ class App extends React.Component {
                     
 
                 </Block>
-                <Proj_list data={proj} title="Mis proyectos" />
+                <Proj_list data={proj} title="Algunos proyectos" />
 
             </Cuerpo>
         )
