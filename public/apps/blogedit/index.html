@@ -40,14 +40,52 @@
             width: 100%;
             height: 600px;
         }
+        .img {
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .control_post {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 40px);
+            height: calc(50% - 40px);
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <div id="nodo">
+        <div style="padding: 20px;">
+            Descripcion breve: Blogedit es un cms (sistema de gestión de contenidos) para 
+            blogs o paginas basadas en contenido.
+            <br> <br>
+            Al dar en el boton se abrira en una pagina aparte donde cargara el cms y al dar guardar, 
+            el contenido se reflejara en esta pagina.
+        </div>
         <div class="head">
             <button class="boton" onclick="open_blog()">
                 Abrir con blogedit
             </button>
+            <br>
+        </div>
+        <div>
+            <div style="display: flex; width: 100%; height: 150px; border-bottom: 2px solid black; ">
+                <div id="img" style="height: 150px; width: 250px; border-right: 2px solid black;" class="img">
+
+                </div>
+                <div style="height: 150px; width: calc(100% - 250px);">
+                    <div class="control_post">
+                        <h1 id="title" style="text-align: center;">
+
+                        </h1>
+                    </div>
+                    <div id="des" class="control_post">
+
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="content" class="mino">
 

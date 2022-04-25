@@ -79,9 +79,10 @@
     width: 100%;
     max-width: 600px;
     height: max-content;
-    background-color: #446;
+    /*background-color: #446;*/
     padding: 20px;
-    color: white;
+    color: black;
+    background-color: #f0f0ff;
 }
 
 .bt_head, .plug-gui-button {

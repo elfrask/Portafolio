@@ -12,6 +12,9 @@ function open_blog() {
         console.log(a);
         data = a;
         go("content").innerHTML= data.data;
+        go("title").innerText = data.title;
+        go("des").innerText = data.description;
+        go("img").style.backgroundImage = `url("${data.img}")`
     });
 
     app.onload((x) => {
