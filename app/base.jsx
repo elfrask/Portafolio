@@ -73,11 +73,25 @@ let proj = [
         "/temtem"
     ),
 ]
+
+let proj_default = gen_proj(
+    "Proximamente",
+    "/img/proj/prox.png",
+    `
+        Proximamente habra mas proyectos
+        para la presentacion de este
+        portafolio, tal vez tu idea
+        pueda ser la siguiente
+    `,
+    ""
+);
+
+
 proj.push(
 
-    proj[0],
-    proj[0],
-    proj[0]
+    proj_default,
+    proj_default,
+    proj_default,
 )
 
 

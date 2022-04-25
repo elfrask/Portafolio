@@ -1,0 +1,15 @@
+paises admitidos en replit
+
++ Venezuela
++ Colombia
++ Mexico
++ Chile
++ Argentina
++ Bolivia
+- España
+
+
+no admitidos:
+
+- Cuba
+
