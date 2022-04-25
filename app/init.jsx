@@ -49,8 +49,8 @@ let tecno = [
         "python.png"
     ),
     rentec(
-        "Flask",
-        "flask.png"
+        "Godot Engine",
+        "godot.png"
     )
 ]
 
