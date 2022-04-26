@@ -53,6 +53,51 @@
             height: calc(50% - 40px);
             padding: 20px;
         }
+        .publi-e {
+            display: flex;
+            width: 100%; 
+            height: max-content; 
+            border-bottom: 2px solid black;
+            flex-direction: row;
+        }
+
+        .img_port {
+            height: 150px; 
+            width: 250px; 
+            border-right: 2px solid black;
+        }
+
+        .des_port {
+            height: 150px; 
+            width: calc(100% - 250px);
+        }
+
+        /*portrait*/
+        
+        @media only screen and (max-device-width: 500px) {
+            .img_port {
+                height: 150px; 
+                width: 100%; 
+                border-right: none; 
+                border-bottom: 2px solid black;
+            }
+            .des_port {
+                height: 150px; 
+                width: 100%; 
+                
+            }
+            .publi-e {
+                flex-direction: column;
+
+            }
+        }
+
+        /*landscape*/
+
+        @media only screen and  (min-device-width: 500px) {
+            
+        }
+
     </style>
 </head>
 <body>
@@ -70,20 +115,18 @@
             </button>
             <br>
         </div>
-        <div>
-            <div style="display: flex; width: 100%; height: 150px; border-bottom: 2px solid black; ">
-                <div id="img" style="height: 150px; width: 250px; border-right: 2px solid black;" class="img">
+        <div class="publi-e">
+            <div id="img" class="img img_port">
 
+            </div>
+            <div class="des_port">
+                <div class="control_post">
+                    <h1 id="title" style="text-align: center;">
+
+                    </h1>
                 </div>
-                <div style="height: 150px; width: calc(100% - 250px);">
-                    <div class="control_post">
-                        <h1 id="title" style="text-align: center;">
+                <div id="des" class="control_post">
 
-                        </h1>
-                    </div>
-                    <div id="des" class="control_post">
-
-                    </div>
                 </div>
             </div>
         </div>
