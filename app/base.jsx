@@ -65,10 +65,12 @@ let proj = [
         "Coding Live",
         "/img/proj/codinglive.png",
         `
+           
             Coding Live es una app de conferencias
-            orientada a la programacion perfecto para
-            dar conferencias en vivo, entrevistas
-            tecnicas, clases a distancia, etc
+            sobre programacion perfecto para
+            dar conferencias, entrevistas
+            tecnicas, clases a distancia
+        
         `,
         "/codinglive"
     ),
