@@ -22,6 +22,8 @@ let open = p => {
     return me // 0
 };
 
+//https://condinglive.frask.repl.co/
+
 function gen_render(conf = {head:"./public/template/head.html",template:"./public/template/template.html"}) {
     conf = conf||{}
     let me = {
@@ -58,6 +60,12 @@ function run() {
 	app.get("/clsweb", (req, res) => {
         res.redirect("https://clswebsite.frask.repl.co/")
     });
+
+    app.get("/codinglive", (req, res) => {
+        res.redirect("https://condinglive.frask.repl.co/")
+    });
+
+    
     app.use("/blog", express.static("./public/apps/blogedit"));
     app.use("/blogedit", express.static("./public/apps/blogedit/blogedit"));
 

@@ -62,6 +62,17 @@ let proj = [
         "/clsweb"
     ),
     gen_proj(
+        "Coding Live",
+        "/img/proj/codinglive.png",
+        `
+            Coding Live es una app de conferencias
+            orientada a la programacion perfecto para
+            dar conferencias en vivo, entrevistas
+            tecnicas, clases a distancia, etc
+        `,
+        "/codinglive"
+    ),
+    gen_proj(
         "Temmie Conga!",
         "/img/proj/temmie.png",
         `
@@ -88,8 +99,6 @@ let proj_default = gen_proj(
 
 
 proj.push(
-
-    proj_default,
     proj_default,
     proj_default,
 )
