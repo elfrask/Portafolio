@@ -62,8 +62,8 @@ function run() {
     });
 
     app.get("/codinglive", (req, res) => {
-        //res.redirect("https://condinglive.frask.repl.co/");
-        res.redirect("https://codinglive.herokuapp.com/");
+        res.redirect("https://codinglive.frask.repl.co/");
+        //res.redirect("https://codinglive.herokuapp.com/");
     });
 
     
