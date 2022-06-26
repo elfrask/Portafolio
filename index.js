@@ -66,6 +66,12 @@ function run() {
         //res.redirect("https://codinglive.herokuapp.com/");
     });
 
+    app.get("/corin", (req, res) => {
+        res.redirect("https://corin.frask.repl.co/");
+        //res.redirect("https://codinglive.herokuapp.com/");
+    });
+    
+
     
     app.use("/blog", express.static("./public/apps/blogedit"));
     app.use("/blogedit", express.static("./public/apps/blogedit/blogedit"));

@@ -75,6 +75,16 @@ let proj = [
         "/codinglive"
     ),
     gen_proj(
+        "Corin",
+        "/img/proj/corin.png",
+        `
+            Corin es una app minimalista que 
+            te permite llevar un conteo 
+            exacto de las deudas de ti y tus contactos
+        `,
+        "/corin"
+    ),
+    gen_proj(
         "Temmie Conga!",
         "/img/proj/temmie.png",
         `
@@ -101,7 +111,6 @@ let proj_default = gen_proj(
 
 
 proj.push(
-    proj_default,
     proj_default,
 )
 
@@ -270,7 +279,7 @@ class Floor extends React.Component{
                             <br />
                             <a href="mailto:carlosxpages@gmail.com">carlosxpages@gmail.com</a>
                             <br /><br />
-                            <a href="tel:+584248310640">Telegram</a>
+                            <a href="tel:+584127017741">Telegram</a>
 
                         </div>
                     </div>
