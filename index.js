@@ -2,7 +2,8 @@ let fs = require('fs');
 let bp = require('body-parser')
 let express = require('express');
 const { Interface } = require('readline');
-let app = express();
+let app = express.Router();
+let r = express();
 
 
 
@@ -110,6 +111,8 @@ app.use("/app", express.static("./app"));
 
 let PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+r.use(app);
+
+r.listen(PORT, () => {
     console.log("Server open in the port " + PORT)
 })
