@@ -12,6 +12,9 @@
     "reactjs": "^1.0.0"
   },
   "devDependencies": {},
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node ./index.js"
   },

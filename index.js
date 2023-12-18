@@ -108,7 +108,7 @@ app.use("/font", express.static("./font"));
 app.use("/app", express.static("./app"));
 
 
-let PORT = process.env.PORT || 80;
+let PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log("Server open in the port " + PORT)
