@@ -12,7 +12,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "builds": "npm i",
     "build": "npm i"
   },
   "keywords": [],
