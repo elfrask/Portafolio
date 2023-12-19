@@ -9,8 +9,5 @@ app.get("/", (req, res) => {
     res.send(`<h1>Hello World</h1>`)
 });
 
-let PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log(`server open in the port: ${PORT}`)
-})
+module.exports = app;
