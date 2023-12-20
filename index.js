@@ -1,7 +1,6 @@
 let fs = require('fs');
 let bp = require('body-parser')
 let express = require('express');
-const { Interface } = require('readline');
 let app = express.Router();
 let r = express();
 
