@@ -55,7 +55,7 @@ function gen_render(conf = {head:"./public/template/head.html",template:"./publi
 
 
 
-let page = gen_render({template:"./public/template/plantilla.html"});
+let page = gen_render({template:"./src/public/template/plantilla.html"});
 
 function run() {
 	app.get("/clsweb", (req, res) => {
@@ -74,8 +74,8 @@ function run() {
     
 
     
-    app.use("/blog", express.static("./public/apps/blogedit"));
-    app.use("/blogedit", express.static("./public/apps/blogedit/blogedit"));
+    app.use("/blog", express.static("./src/public/apps/blogedit"));
+    app.use("/blogedit", express.static("./src/public/apps/blogedit/blogedit"));
 
     app.get("/", (req, res) => {
         
@@ -86,13 +86,13 @@ function run() {
         */
         res.send(
             page.render(
-                open("./public/pages/home.html").read()
+                open("./src/public/pages/home.html").read()
             )
         )
     });
     app.get("/temtem", (req, res) => {
         res.send(
-            open("./public/pages/temm.html").read()
+            open("./src/public/pages/temm.html").read()
         )
     })
     
@@ -100,13 +100,13 @@ function run() {
 
 run()
 
-app.use("/css", express.static("./css"));
-app.use("/sass", express.static("./sass"));
-app.use("/js", express.static("./js"));
-app.use("/img", express.static("./img"));
-app.use("/music", express.static("./music"));
-app.use("/font", express.static("./font"));
-app.use("/app", express.static("./app"));
+app.use("/css", express.static("./src/css"));
+app.use("/sass", express.static("./src/sass"));
+app.use("/js", express.static("./src/js"));
+app.use("/img", express.static("./src/img"));
+app.use("/music", express.static("./src/music"));
+app.use("/font", express.static("./src/font"));
+app.use("/app", express.static("./src/app"));
 
 
 let PORT = process.env.PORT || 3000;
