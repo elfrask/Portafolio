@@ -95,10 +95,18 @@ function run() {
             open("./src/public/pages/temm.html").read()
         )
     })
+
+    app.get("/server_info", (req, res) => {
+        res.json({
+            cwd:process.cwd(),
+            dirname: __dirname,
+            serverless: true,
+            currentdirectory: fs.readdirSync(".", "utf-8")
+        })
+    })
     
 }; 
 
-run()
 
 // app.use("/css", express.static("./src/css"));
 // app.use("/sass", express.static("./src/sass"));
@@ -107,6 +115,7 @@ run()
 // app.use("/music", express.static("./src/music"));
 // app.use("/font", express.static("./src/font"));
 // app.use("/app", express.static("./src/app"));
+run()
 
 app.use("/", express.static(path.join(__dirname, "src")));
 
