@@ -117,7 +117,7 @@ function run() {
 // app.use("/app", express.static("./src/app"));
 run()
 
-//app.use("/", express.static(path.join(__dirname, "src")));
+app.use("/", express.static(path.join(__dirname, "src")));
 
 
 
