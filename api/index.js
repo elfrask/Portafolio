@@ -1,5 +1,4 @@
 let express = require("express");
-let bp = require("body-parser");
 
 let app = express();
 
