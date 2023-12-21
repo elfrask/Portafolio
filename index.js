@@ -1,6 +1,7 @@
 let fs = require('fs');
 let bp = require('body-parser')
 let express = require('express');
+let path = require("path");
 let app = express.Router();
 let r = express();
 
@@ -99,13 +100,16 @@ function run() {
 
 run()
 
-app.use("/css", express.static("./src/css"));
-app.use("/sass", express.static("./src/sass"));
-app.use("/js", express.static("./src/js"));
-app.use("/img", express.static("./src/img"));
-app.use("/music", express.static("./src/music"));
-app.use("/font", express.static("./src/font"));
-app.use("/app", express.static("./src/app"));
+// app.use("/css", express.static("./src/css"));
+// app.use("/sass", express.static("./src/sass"));
+// app.use("/js", express.static("./src/js"));
+// app.use("/img", express.static("./src/img"));
+// app.use("/music", express.static("./src/music"));
+// app.use("/font", express.static("./src/font"));
+// app.use("/app", express.static("./src/app"));
+
+app.use("/", express.static(path.join(__dirname, "src")));
+
 
 
 let PORT = process.env.PORT || 3000;
@@ -114,4 +118,9 @@ r.use(app);
 
 r.listen(PORT, () => {
     console.log("Server open in the port " + PORT)
+    console.log();
+    console.log([
+        `App path: ${__dirname}`,
+        `Src path: ${path.join(__dirname, "src")}`
+    ].join("\n"))
 })
