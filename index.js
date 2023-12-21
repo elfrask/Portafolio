@@ -5,7 +5,7 @@ let path = require("path");
 let app = express.Router();
 let r = express();
 
-
+let j = path.join;
 
 app.use(bp.urlencoded({extended:true}))
 
@@ -55,7 +55,7 @@ function gen_render(conf = {head:"./public/template/head.html",template:"./publi
 
 
 
-let page = gen_render({template:"./src/public/template/plantilla.html"});
+let page = gen_render({template:j(__dirname, "./src/public/template/plantilla.html")});
 
 function run() {
 	app.get("/clsweb", (req, res) => {
@@ -86,13 +86,13 @@ function run() {
         */
         res.send(
             page.render(
-                open("./src/public/pages/home.html").read()
+                open(j(__dirname, "./src/public/pages/home.html")).read()
             )
         )
     });
     app.get("/temtem", (req, res) => {
         res.send(
-            open("./src/public/pages/temm.html").read()
+            open(j(__dirname, "./src/public/pages/temm.html")).read()
         )
     })
 
@@ -117,7 +117,7 @@ function run() {
 // app.use("/app", express.static("./src/app"));
 run()
 
-app.use("/", express.static(path.join(__dirname, "src")));
+//app.use("/", express.static(path.join(__dirname, "src")));
 
 
 
