@@ -59,7 +59,7 @@ let page = gen_render({template:j(__dirname, "./src/public/template/plantilla.ht
 
 function run() {
 	app.get("/clsweb", (req, res) => {
-        res.redirect("https://clswebsite.frask.repl.co/")
+        res.redirect("https://clswebsite.vercel.app/")
     });
 
     app.get("/codinglive", (req, res) => {
